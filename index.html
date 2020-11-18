@@ -2,8 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>To Do List</title>
   </head>
   <body>
@@ -19,6 +20,9 @@
         <div v-for="(element,i) in listTodo">
           <div class="">
             {{listTodo[i]}}
+          </div>
+          <div class="" @click="removeTodo(i)">
+            <i class="fas fa-times"></i>
           </div>
         </div>
       </div>

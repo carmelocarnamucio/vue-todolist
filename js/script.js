@@ -19,6 +19,9 @@ var app = new Vue({
         this.listTodo.push(this.todo)
         this.todo = ""
       }
+    },
+    removeTodo: function(i) {
+      this.listTodo.splice(i, 1);
     }
   }
 });
