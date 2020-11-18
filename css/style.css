@@ -15,8 +15,10 @@ body {
 }
 
 input {
+  width: 300px;
   margin: 20px 5px;
-  padding: 5px 10px;    border-radius: 15px;
+  padding: 8px 10px;
+  border-radius: 15px;
 }
 
 button {
@@ -31,7 +33,7 @@ button {
 }
 
 button:hover {
-    background-color:#e63946;
+  background-color:#e63946;
 }
 
 .title {
@@ -69,7 +71,6 @@ button:hover {
 
 .element-to-do:last-child {
   border-bottom: 0;
-  margin-bottom: 20px;
 }
 
 .new-todo {
@@ -81,10 +82,10 @@ button:hover {
   text-align: center;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-leave-active {
   transition: opacity .5s;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-leave-to {
   opacity: 0;
 }
