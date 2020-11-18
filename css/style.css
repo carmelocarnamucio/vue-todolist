@@ -1,17 +1,44 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #202124;
-    color: #e8eaed;
+  background-color: #202124;
+  color: #e8eaed;
 }
 
 #app{
   font-family: 'Raleway', sans-serif;
   margin: 0 auto;
+}
+
+input {
+  margin: 20px 5px;
+  padding: 5px 10px;    border-radius: 15px;
+}
+
+button {
+  background-color: #264653;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 6px -6px black;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+button:hover {
+    background-color:#e63946;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  font-size: 20px;
 }
 
 .fa-clipboard-list{
@@ -45,59 +72,19 @@ body {
   margin-bottom: 20px;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  margin: 30px;
-  font-size: 20px;
-
-}
-
 .new-todo {
-    background-color: #c8aa0e;
-    border-radius: 5px;
-    max-width: 800px;
-    padding: 20px;
-    margin: 0 auto;
-    text-align: center;
+  background-color: #c8aa0e;
+  border-radius: 5px;
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.new-todo ul li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #555;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
 }
 
-.new-todo span::first-letter {
-    text-transform: uppercase;
-}
-
-.new-todo ul li i {
-    cursor: pointer;
-}
-
-.new-todo ul li i:hover {
-    color: #e63946;
-}
-
-input {
-    margin: 20px 5px;
-    padding: 5px 10px;
-    border-radius: 15px;
-}
-
-button {
-    background-color: #264653;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid transparent;
-    box-shadow: 0 8px 6px -6px black;
-    color: #fff;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-button:hover {
-    background-color:#e63946;
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }

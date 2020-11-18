@@ -12,7 +12,7 @@ var app = new Vue({
   el: "#app",
   data: {
     todo: "",
-    listTodo: []
+    listTodo: [],
   },
 
   methods: {
