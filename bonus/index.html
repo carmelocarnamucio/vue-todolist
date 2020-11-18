@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>To Do List</title>
+  </head>
+  <body>
+
+    <div id="app">
+
+      <div class="title">
+        <i class="fas fa-clipboard-list"></i>
+        <h1>To Do List</h1>
+      </div>
+
+      <div class="add">
+        <input v-model="todo" placeholder="Scrivi una nota..." @keypress.enter="addTodo">
+        <button type="button" @click="addTodo">Aggiungi</button>
+        <button type="button" v-if="listTodo.length > 1" @click="removeAll">Cancella tutto</button>
+      </div>
+
+      <div class="new-todo">
+        <div v-if="listTodo.length === 0" class="default-msg">
+          <p>Le note aggiunte vengono visualizzate qui</p>
+        </div>
+        <transition-group tag='ul' name="fade">
+          <div class="element-to-do" v-for="(element,i) in listTodo" :key="element">
+            <div class="add-todo">
+              {{listTodo[i]}}
+            </div>
+            <div class="remove" @click="removeTodo(i)">
+              <i class="far fa-trash-alt"></i>
+            </div>
+          </div>
+        </transition-group>
+      </div>
+
+    </div>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
