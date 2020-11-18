@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>To Do List</title>
+  </head>
+  <body>
+
+    <div id="app">
+
+      <div class="">
+        <input v-model="todo" placeholder="Scrivi una nota...">
+        <button type="button" @click="addTodo">AGGIUNGI</button>
+      </div>
+
+      <div>
+        <div v-for="(element,i) in listTodo">
+          <div class="">
+            {{listTodo[i]}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
