@@ -19,6 +19,7 @@
       <div class="add">
         <input v-model="todo" placeholder="Scrivi una nota..." @keypress.enter="addTodo">
         <button type="button" @click="addTodo">Aggiungi</button>
+        <button type="button" @click="removeAll">Cancella tutto</button>
       </div>
 
       <div class="new-todo">
