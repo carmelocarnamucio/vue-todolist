@@ -12,11 +12,15 @@
     <div id="app">
 
       <div class="">
-        <input v-model="todo" placeholder="Scrivi una nota...">
-        <button type="button" @click="addTodo">AGGIUNGI</button>
+        <input v-model="todo" placeholder="Scrivi una nota..." @keypress.enter="addTodo">
+        <button type="button" @click="addTodo">Aggiungi</button>
       </div>
 
-      <div>
+      <div class="">
+        <div v-if="listTodo.length === 0" class="default-msg">
+          Le note aggiunte vengono visualizzate qui
+        </div>
+
         <div v-for="(element,i) in listTodo">
           <div class="">
             {{listTodo[i]}}
