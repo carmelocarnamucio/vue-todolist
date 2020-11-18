@@ -19,15 +19,13 @@
       <div class="add">
         <input v-model="todo" placeholder="Scrivi una nota..." @keypress.enter="addTodo">
         <button type="button" @click="addTodo">Aggiungi</button>
-        <button type="button" v-if="listTodo.length > 1" @click="removeAll">Cancella tutto</button>
       </div>
 
       <div class="new-todo">
         <div v-if="listTodo.length === 0" class="default-msg">
           <p>Le note aggiunte vengono visualizzate qui</p>
         </div>
-        <transition-group tag='ul' name="fade">
-          <div class="element-to-do" v-for="(element,i) in listTodo" :key="element">
+          <div class="element-to-do" v-for="(element,i) in listTodo">
             <div class="add-todo">
               {{listTodo[i]}}
             </div>
@@ -35,7 +33,6 @@
               <i class="far fa-trash-alt"></i>
             </div>
           </div>
-        </transition-group>
       </div>
 
     </div>

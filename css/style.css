@@ -81,11 +81,3 @@ button:hover {
   margin: 0 auto;
   text-align: center;
 }
-
-.fade-leave-active {
-  transition: opacity .5s;
-}
-
-.fade-leave-to {
-  opacity: 0;
-}
