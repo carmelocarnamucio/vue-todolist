@@ -7,11 +7,27 @@
 body {
   background-color: #202124;
   color: #e8eaed;
+  font-family: 'Raleway', sans-serif;
 }
 
-#app{
-  font-family: 'Raleway', sans-serif;
-  margin: 0 auto;
+/* Titolo */
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  font-size: 20px;
+}
+
+.fa-clipboard-list{
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+/* Inpunt nuovo to do nella lista */
+
+.add {
+ text-align: center;
 }
 
 input {
@@ -36,42 +52,7 @@ button:hover {
   background-color:#e63946;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  margin: 30px;
-  font-size: 20px;
-}
-
-.fa-clipboard-list{
-  font-size: 30px;
-  margin-right: 10px;
-}
-
-.add {
- text-align: center;
-}
-
-.remove:hover {
-  color: red;
-  cursor: pointer;
-}
-
-.element-to-do {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin: 0 20px;
-  border-bottom: 1px solid grey;
-}
-
-.element-to-do:first-child {
-  margin-top: 5px;
-}
-
-.element-to-do:last-child {
-  border-bottom: 0;
-}
+/* Lista to do */
 
 .new-todo {
   background-color: #c8aa0e;
@@ -81,6 +62,29 @@ button:hover {
   margin: 0 auto;
   text-align: center;
 }
+
+p {
+  font-size: 25px;
+}
+
+.element-todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 20px;
+  border-bottom: 1px solid grey;
+}
+
+.element-todo:last-child {
+  border-bottom: 0;
+}
+
+.remove:hover {
+  color: #e63946;
+  cursor: pointer;
+}
+
+/* Transizioni */
 
 .fade-leave-active {
   transition: opacity .5s;

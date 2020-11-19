@@ -1,13 +1,8 @@
-//Creiamo una mini app di todolist con html+css+js in Vue
-//Features principali:
-//un input permette all’utente di scrivere una “cosa da fare”
-//un bottone permette di aggiungere quella "cosa" alla lista in pagina, come promemoria
-//grazie ad un bottone (X) può eliminare quella determinata "cosa" dalla lista
 //BONUS:
-//dò la possibilità anche di inserire la nuova “cosa da fare”, scritta nell’input anche con la pressione del tasto ‘enter’ da tastiera;
-//aggiunto tasto cancella tutto
-//aggiunta transizione quando viene eliminato elemento
-//alert che ti avverte che hai già inserito lo stesso elemento nella lista
+//la possibilità di inserire la nota scritta nell’input anche con la pressione del tasto ‘enter’ da tastiera
+//aggiunto tasto cancella tutto, che appare all'inserimento di una seconda nota
+//aggiunta transizione quando viene eliminato una nota
+//alert che ti avverte che hai già inserito lo stesso elemento nella lista o non hai inserito nussun carattere
 
 var app = new Vue({
 
@@ -23,6 +18,9 @@ var app = new Vue({
       if (this.listTodo.includes(this.todo)) {
         alert("PROMEMORIA: Hai già inserito questa nota nella lista");
         this.listTodo.push(this.todo)
+        this.todo = ""
+      } else if (this.todo === "" ){
+        alert("Non hai inserito nessun carattere");
       } else {
         this.listTodo.push(this.todo)
         this.todo = ""

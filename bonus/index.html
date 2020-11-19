@@ -10,25 +10,25 @@
   <body>
 
     <div id="app">
-
+      <!-- Titolo -->
       <div class="title">
         <i class="fas fa-clipboard-list"></i>
         <h1>To Do List</h1>
       </div>
-
+      <!-- Inpunt nuovo to do nella lista -->
       <div class="add">
         <input v-model="todo" placeholder="Scrivi una nota..." @keypress.enter="addTodo">
-        <button type="button" @click="addTodo">Aggiungi</button>
-        <button type="button" v-if="listTodo.length > 1" @click="removeAll">Cancella tutto</button>
+        <button type="button" @click="addTodo">Aggiungi</button class="remove">
+        <button type="button" v-if="listTodo.length > 1" @click="removeAll" class="remove">Cancella tutto</button>
       </div>
-
+      <!-- Lista to do -->
       <div class="new-todo">
-        <div v-if="listTodo.length === 0" class="default-msg">
+        <div v-if="listTodo.length === 0">
           <p>Le note aggiunte vengono visualizzate qui</p>
         </div>
-        <transition-group tag='ul' name="fade">
-          <div class="element-to-do" v-for="(element,i) in listTodo" :key="element">
-            <div class="add-todo">
+        <transition-group name="fade">
+          <div class="element-todo" v-for="(element,i) in listTodo" :key="element">
+            <div>
               {{listTodo[i]}}
             </div>
             <div class="remove" @click="removeTodo(i)">
