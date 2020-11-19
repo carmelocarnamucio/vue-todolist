@@ -7,11 +7,26 @@
 body {
   background-color: #202124;
   color: #e8eaed;
+  font-family: 'Raleway', sans-serif;
 }
 
-#app{
-  font-family: 'Raleway', sans-serif;
-  margin: 0 auto;
+/* Titolo */
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  font-size: 20px;
+}
+
+.fa-clipboard-list{
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+/* Inpunt nuovo to do nella lista */
+.add {
+ text-align: center;
 }
 
 input {
@@ -36,25 +51,19 @@ button:hover {
   background-color:#e63946;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  margin: 30px;
-  font-size: 20px;
+/* Lista to do */
+
+.new-todo {
+  background-color: #c8aa0e;
+  border-radius: 5px;
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.fa-clipboard-list{
-  font-size: 30px;
-  margin-right: 10px;
-}
-
-.add {
- text-align: center;
-}
-
-.remove:hover {
-  color: red;
-  cursor: pointer;
+p {
+  font-size: 25px;
 }
 
 .element-to-do {
@@ -65,19 +74,11 @@ button:hover {
   border-bottom: 1px solid grey;
 }
 
-.element-to-do:first-child {
-  margin-top: 5px;
-}
-
 .element-to-do:last-child {
   border-bottom: 0;
 }
 
-.new-todo {
-  background-color: #c8aa0e;
-  border-radius: 5px;
-  max-width: 800px;
-  padding: 20px;
-  margin: 0 auto;
-  text-align: center;
+.remove:hover {
+  color: #e63946;
+  cursor: pointer;
 }
