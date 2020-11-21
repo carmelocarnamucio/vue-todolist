@@ -19,7 +19,7 @@
       <div class="add">
         <input v-model="todo" placeholder="Scrivi una nota..." @keypress.enter="addTodo">
         <button type="button" @click="addTodo">Aggiungi</button class="remove">
-        <button type="button" v-if="listTodo.length > 1" @click="removeAll" class="remove">Cancella tutto</button>
+        <button type="button" v-if="listTodo.length > 1" @click="removeAll">Cancella tutto</button>
       </div>
       <!-- Lista to do -->
       <div class="new-todo">
@@ -31,12 +31,31 @@
             <div>
               {{listTodo[i]}}
             </div>
-            <div class="remove" @click="removeTodo(i)">
-              <i class="far fa-trash-alt"></i>
+            <div class="command">
+              <!-- frecce su/giù -->
+              <div class="arrow">
+                <i class="fas fa-caret-up" :class='{disabled: i === 0}' @click='up(i)' ></i>
+                <i class="fas fa-sort-down" :class ='{disabled: i === (listTodo.length-1)}'@click='down(i)'></i>
+              </div>
+              <!-- icona elimina nota -->
+              <div class="remove" @click="removeTodo(i)">
+                <i class="far fa-trash-alt"></i>
+              </div>
             </div>
           </div>
         </transition-group>
       </div>
+      <!-- finestra conferma nota -->
+      <div class="back flex2" :class="(clone) ? '' : 'hidden'">
+        <div class="popup">
+          <div class="text flex">
+            Hai già inserito questa nota. Vuoi aggiungerla comunque?
+          </div>
+          <div class="flex">
+            <button class="btn-si" type="button" name="button" @click="confirm">Si</button>
+            <button class="btn-no" type="button" name="button" @click="deleteClone">No</button>
+          </div>
+        </div>
 
     </div>
     <script src="js/script.js"></script>
